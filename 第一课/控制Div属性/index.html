@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding:0;
+            }
+             .container{
+                 width:960px;
+                 margin:0 auto;
+                 position: relative;
+             }
+             .buttons{
+                 text-align: center;
+                 margin-top:16px;
+             }
+             .buttons button{
+                 padding:4px;
+             }
+             #square{
+                width:100px;
+                height: 100px;
+                background:#000;
+                margin:10px auto;
+             }
+        </style>
+        <script>
+            window.onload=function(){
+                document.getElementById('width').onclick=function(){
+                    
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="buttons">
+                <button id="width">变宽</button>
+                <button id="height">变高</button>
+                <button id="color">变色</button>
+                <button id="visuable">隐藏</button>
+                <button id="reset">重置</button>
+            </div>
+            <div id="square"></div>
+        </div>
+    </body>
+</html>
