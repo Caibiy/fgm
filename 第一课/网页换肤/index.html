@@ -2,12 +2,94 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf8">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            .container{
+                width:960px;
+                margin:0 auto;
+            }
+            .buttons{
+                margin:20px 0;
+            }
+            .buttons span{
+                width:16px;
+                height:16px;
+                display: inline-block;
+            }
+            .theme-pink{
+                background-color:red;
+            }
+            .theme-green{
+                background-color:green;
+            }
+            .theme-black{
+                background-color:black;
+            }
+            ul li{
+                list-style: none;
+                float:left;
+                padding:8px 24px;
+                border:1px solid #fff;
+            }
+            ul li a{
+                text-decoration: none;
+                font-size:14px;
+                color:#fff
+            }
+            ul.red{
+                background-color:red;
+            }
+            ul.green{
+                background-color:green;
+            }
+            ul.black{
+                background-color:black;
+            }
+            .theme-pink.used{
+                width:6px;
+                height:6px;
+                border:5px solid red;
+                background-color:#fff;
+            }
+            .theme-green.used{
+                width:6px;
+                height:6px;
+                border:5px solid green;
+                background-color:#fff;
+            }
+            .theme-black.used{
+                width:6px;
+                height:6px;
+                border:5px solid black;
+                background-color:#fff;
+            }
+            .red{
+                background-color:pink;
+            }
+            .green{
+                background-color:#33ff33;
+            }
+            .black{
+                background-color:#ccc;
+            }
+        </style>
+        <script>
+            window.onload=function(){
+                var target=document.getElementsByClassName("used")[0];   
+                document.getElementsByTagName("ul")[0].setAttribute("class",target.getAttribute('tag'));
+                document.getElementsByTagName("ul")[0].setAttribute("class","red");
+            }
+        </script>
     </head>
-    <body>
+    <body class="red">
+        <div class="container">
         <div class="buttons">
-            <button></button>
-            <button></button>
-            <button></button>
+            <span tag="red" class="theme-pink used"></span>
+            <span tag="green" class="theme-green"></span>
+            <span tag="black" class="theme-black"></span>
         </div>
         <header>
             <nav>
@@ -20,5 +102,6 @@
                 </ul>
             </nav>
         </header>
+        </div>
     </body>
 </html>
