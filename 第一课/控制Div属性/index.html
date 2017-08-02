@@ -27,8 +27,18 @@
         </style>
         <script>
             window.onload=function(){
+                var square = document.getElementById("square");
                 document.getElementById('width').onclick=function(){
-                    
+                    square.style.width="300px";
+                }
+                document.getElementById('height').onclick=function(){
+                    square.style.height="200px";
+                }
+                document.getElementById('color').onclick=function(){
+                    square.style.backgroundColor="#f00";
+                }
+                document.getElementById('visuable').onclick=function(){
+                    square.style.display="none";
                 }
             }
         </script>
