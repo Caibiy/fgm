@@ -11,10 +11,10 @@
                 width:960px;
                 margin:0 auto;
             }
-            .buttons{
+            #buttons{
                 margin:20px 0;
             }
-            .buttons span{
+            #buttons span{
                 width:16px;
                 height:16px;
                 display: inline-block;
@@ -39,54 +39,69 @@
                 font-size:14px;
                 color:#fff
             }
-            ul.red{
+            li.red{
                 background-color:red;
             }
-            ul.green{
-                background-color:green;
+            li.green{
+                background:green;
             }
-            ul.black{
+            li.black{
                 background-color:black;
             }
-            .theme-pink.used{
+           #buttons .theme-pink.used{
                 width:6px;
                 height:6px;
                 border:5px solid red;
                 background-color:#fff;
             }
-            .theme-green.used{
+            #buttons .theme-green.used{
                 width:6px;
                 height:6px;
                 border:5px solid green;
                 background-color:#fff;
             }
-            .theme-black.used{
+            #buttons .theme-black.used{
                 width:6px;
                 height:6px;
                 border:5px solid black;
                 background-color:#fff;
             }
-            .red{
+            body.red{
                 background-color:pink;
             }
-            .green{
+            body.green{
                 background-color:#33ff33;
             }
-            .black{
+            body.black{
                 background-color:#ccc;
             }
         </style>
         <script>
             window.onload=function(){
                 var target=document.getElementsByClassName("used")[0];   
-                document.getElementsByTagName("ul")[0].setAttribute("class",target.getAttribute('tag'));
-                document.getElementsByTagName("ul")[0].setAttribute("class","red");
+                var buttons=document.getElementById('buttons').children;
+                setBacColor();
+                for(var j=0;j<buttons.length;j++){
+                    //自动会有一个function 抛出}异常
+                    //buttons.item(j).setAttribute("onclick","javascript:function(){alert(this.getAttribute('tag'))}()");
+                    buttons.item(j).onclick=function(){
+                        setBacColor(this.getAttribute('tag'));
+                    }
+                }
+            }
+            function setBacColor(temp="red"){
+                var liAll=document.getElementsByTagName("ul")[0].children;
+                var body=document.getElementById('body');
+                body.setAttribute('class',temp);
+                for(var i=0;i<liAll.length;i++){
+                    liAll.item(i).setAttribute('class',temp);
+                }
             }
         </script>
     </head>
-    <body class="red">
+    <body id="body">
         <div class="container">
-        <div class="buttons">
+        <div id="buttons">
             <span tag="red" class="theme-pink used"></span>
             <span tag="green" class="theme-green"></span>
             <span tag="black" class="theme-black"></span>
