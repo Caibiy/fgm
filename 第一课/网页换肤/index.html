@@ -85,8 +85,15 @@
                     //自动会有一个function 抛出}异常
                     //buttons.item(j).setAttribute("onclick","javascript:function(){alert(this.getAttribute('tag'))}()");
                     buttons.item(j).onclick=function(){
-                        
-                        setBacColor(this.getAttribute('tag'));
+                        var _=this;
+                        var _fclass=this.getAttribute('fclass');
+                        //清除所有btn被选中样式
+                        for(var t=0;t<buttons.length;t++){
+                            var bclass=buttons.item(t).getAttribute('fclass');
+                            buttons.item(t).setAttribute('class',bclass);
+                        }
+                        _.setAttribute('class',_fclass+" used");
+                        setBacColor(_.getAttribute('tag'));
                     }
                 }
             }
@@ -103,9 +110,9 @@
     <body id="body">
         <div class="container">
         <div id="buttons">
-            <span tag="red" class="theme-pink used"></span>
-            <span tag="green" class="theme-green"></span>
-            <span tag="black" class="theme-black"></span>
+            <span tag="red" fclass="theme-pink" class="theme-pink used"></span>
+            <span tag="green" fclass="theme-green" class="theme-green"></span>
+            <span tag="black" fclass="theme-black" class="theme-black"></span>
         </div>
         <header>
             <nav>

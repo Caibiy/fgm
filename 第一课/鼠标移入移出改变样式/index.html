@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <style>
+            .square{
+                width:200px;
+                height:200px;
+                background-color:#000;
+                margin:10px auto;
+                color:#fff;
+                padding:20px;
+                font-size:0.9em;
+            }
+            #clicked{
+                padding:10px;
+                background:#fff;
+                color:red;
+                border:10px solid red;
+            }
+        </style>
+        <script>
+            window.onload=function(){
+                    var square=document.getElementsByClassName('square')[0];
+                    var id = square.getAttribute('tag')
+                    square.onmouseover=function(){
+                        square.setAttribute('id',id);
+                    }
+                    square.onmouseout=function(){
+                        square.setAttribute('id','')
+                    }
+            }
+        </script>
+    </head>
+    <body>
+        <div  tag="clicked" id="" class="square">鼠标移入改变样式,鼠标移出恢复</div>
+    </body>
+</html>
