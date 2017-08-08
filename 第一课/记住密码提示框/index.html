@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>记住密码提示框</title>
+        <script>
+                window.onload=function(){
+                    var check=document.getElementById('check');
+                    var msg=document.getElementById('alertMsg');
+                    check.onmouseover=function(){
+                        msg.setAttribute('style','display:block');
+                    }
+                    check.onmouseout=function(){
+                        msg.setAttribute('style','display:none');
+                    }
+                    
+                }
+        </script>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            #outer{
+                width:460px;
+                margin:0 auto;
+                font-size: 0.9em;
+                margin-top:8px;
+            }
+            #alertMsg{
+                margin-top:3px;
+                font-size: 0.8em;
+                width:249px;;
+                padding:15px;
+                background-color:#ffefa4;
+                border:1px solid #f90;
+                display: none;
+            }
+            input{
+                margin-right: 5px;
+            }
+       </style>
+    </head>
+    <body>
+        <div id="outer">
+            <input type="checkbox" id="check"/><span>两周内自动登陆</span>
+            <div id="alertMsg">为了您的信息安全,请不要在网吧或公共场合使用该功能</div>
+        </div>
+
+    </body>
+</html>
