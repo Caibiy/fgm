@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf8"/>
+        <style>
+            *{
+                margin:0;
+                padding:auto;
+            }
+            main{
+                width:520px;
+                margin:0 auto;
+            }
+            #numbers{
+                width:130px;
+                margin-right:8px;
+            }
+            label{
+                color:#ccc;
+            }
+            #btn{
+                display: block;
+                width:80px;
+                margin-top:12px;
+            }
+            #result{
+                color:red
+            }
+        </style>
+        <script>
+            function calcResult(){
+                var strValue=document.getElementById('numbers').getAttribute('value');
+                var strArray=strValue.split(',');
+                var result=document.getElementById('result');
+                result.innerHTML=strArray.reduce(function(pre,curValue,curIndex,arr){
+                    return parseInt(pre)+parseInt(curValue);
+                },0);
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <form>
+                <input id="numbers" name="numbers" value="1,2,3,4,5,6,7,8,9,10"><label for="numbers">输入数字求和，数字之间用半角","号分隔</label>
+                <button id="btn" onclick="calcResult();return false;">求和</button>
+                <div id="result"></div>
+            </form>
+        </main>
+    </body>
+</html>
