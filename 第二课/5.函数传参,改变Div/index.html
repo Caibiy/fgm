@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf8"/>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            main{
+                width:400px;
+                margin: 0 auto;
+            }
+            input{
+                padding:3px;
+                margin-left:4px;
+            }
+            button{
+                padding:4px;
+                margin:6px 3px;
+            }
+            #content{
+                width:160px;
+                color:#fff;
+                background:blue;
+                padding:20px;
+            }
+        </style>
+        <script>
+            var content;
+            window.onload=function(){
+                content=document.getElementById('content');
+            }
+
+            function setValue(attr,value){
+                content.style[attr]=value;
+            }
+            function resetFunc(){
+                reset();
+                content.removeAttribute("style");
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <form>
+                <label for="attr">属性名</label><input type="text" value="background" id="attr"/><br>
+                <label for="val">属性值</label><input type="text" value="blue" id="val"/><br>
+                <button onclick="setValue(attr.value,val.value);return false;">确定</button>
+                <button onclick="resetFunc();return false;">重置</button>
+            </form>
+            <div id="content">
+                在上方输入框输入"属性名"及"属性值",点击确定按钮查看效果。
+            </div>
+        </main>
+    </body>
+</html>

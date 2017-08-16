@@ -2,24 +2,79 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf8"/>
-        <style></style>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            #modal{
+                display: none;
+                width:100%;
+                height:100%;
+                background:#000;
+                opacity: 0.4;
+                position: absolute;
+                top:0;
+                left:0;
+            }
+           #dialog{
+               display: none;
+               position: absolute;
+               width:400px;
+               height:200px;
+               background:#fff;
+               margin-left:400px;
+               border:orange solid 5px;
+           }
+           .dialog-top{
+               text-align: right;
+               padding:10px 0;
+               color:orange;
+               border-bottom:orange solid 5px;
+               background-color:pink;
+           }
+           .quit{
+               background:#fff;
+               border:1px solid pink;
+               width:20px;
+               height:20px;
+               display: inline-block;
+               text-align: center;
+               font-size: 0.7em;
+               cursor: pointer;
+               margin-right:10px;
+               cursor: pointer;
+           }
+        </style>
         <script>
             
             window.onload=function(){
-                var button =document.getElementById('btn');
-                button.prototype.flag=true;
+                window.flag=true;
                 
             }
-            function dialog(){
-                this
+            function dialogFunc(){
+              _=this;
+              _.modal = document.getElementById('modal');
+              _.dialog = document.getElementById('dialog');
+              if(window.flag){
+                  window.flag=false;
+                  _.modal .style.display="block";
+                  _.dialog.style.display="block";
+              }else{
+                  _.modal .style.display="none";
+                  _.dialog.style.display="none";
+                  window.flag=true;
+              }
             }
         </script>
     </head>
     <body>
-        <main>
-            <center><button id="btn" onclick=>弹出</button></center>
-            <div id="modal"></div>
-            <div id="dialog">x</div>
+        <main style="padding-top:10px;">
+            <center><button id="btn" onclick="dialogFunc();">弹出</button></center>
         </main>
+        <div id="modal"></div>
+        <div id="dialog">
+          <div class="dialog-top"><span class="quit" onclick="dialogFunc(); return false;">x</span></div>
+        </div>
     </body>
 </html>
