@@ -32,12 +32,12 @@
                 var children=container.item(0).children;
                 for(var i=0;i<children.length;i++){
                     children.item(i).onmouseover=function(){
-                        //this.style={"opacity":1};
-                        this.setAttribute("style","opacity:1;cursor:pointer");
+                        this.style.opacity=1;
+                        this.style.cursor="pointer";
                     };
                     children.item(i).onmouseout=function(){
-                       // this.style.opactity=0.3;
-                       this.setAttribute("style","opacity:0.3;cursor:pointer");
+                        this.style.opacity=0.3;
+                       //this.setAttribute("style","opacity:0.3;cursor:pointer");
                     };
                 }
             }
