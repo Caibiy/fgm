@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf8"/>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            .container{
+                display:flex;
+                width:768px;
+                margin:0 auto;
+                border:1px solid #ccc;
+                justify-content:space-around;
+                flex-wrap: wrap;
+                margin-top:6px;
+            }
+            .img-box{
+                flex-basis: 23%;
+                opacity:0.3;
+            }
+            .img-box img{
+                margin:4px;
+                width:80%;
+                height:auto;   
+            }
+       </style>
+        <script>
+            window.onload=function(){
+                var container = document.getElementsByClassName("container");
+                var children=container.item(0).children;
+                for(var i=0;i<children.length;i++){
+                    children.item(i).onmouseover=function(){
+                        //this.style={"opacity":1};
+                        this.setAttribute("style","opacity:1;cursor:pointer");
+                    };
+                    children.item(i).onmouseout=function(){
+                       // this.style.opactity=0.3;
+                       this.setAttribute("style","opacity:0.3;cursor:pointer");
+                    };
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fiiiyfcjdoj20u00u0ju0.jpg" alt=""></div>
+            <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fil82i7zsmj20u011hwja.jpg" alt=""></div>
+            <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fiiiyfcjdoj20u00u0ju0.jpg" alt=""></div>
+            <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fiiiyfcjdoj20u00u0ju0.jpg" alt=""></div>
+                   <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fil82i7zsmj20u011hwja.jpg" alt=""></div>
+            <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fil82i7zsmj20u011hwja.jpg" alt=""></div>
+            <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fiiiyfcjdoj20u00u0ju0.jpg" alt=""></div>
+            <div class="img-box"><img src="https://ws1.sinaimg.cn/large/610dc034ly1fiiiyfcjdoj20u00u0ju0.jpg" alt=""></div>
+        </div>
+    </body>
+</html>
