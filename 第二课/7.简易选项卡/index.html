@@ -2,20 +2,65 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf8"/>
-        <style></style>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            main {
+                padding-top:20px;
+            }
+            .container{
+                width:768px;
+                margin:0 auto;
+                font-size: 0.8em;
+                border:1px solid #000;
+            }
+            nav{
+                background-color:#000;
+                color:#fff;
+                display: flex;
+            }
+            nav div{
+                flex-basis: 20%;
+                padding:6px 0;
+                text-align: center;
+                cursor: pointer;
+            }
+            nav div:hover{
+                background-color:gray;
+                color:#000;
+            }
+            .content{
+                padding:14px 22px;
+            }
+            .content2 ,.content3{
+                display: none;
+            }
+        </style>
         <script>
             window.onload=function(){
-
+                var nav = document.getElementsByTagName("nav").item(0);
+                for(var i=0;i<nav.children.length;i++){
+                    nav.children.item(i).onmouseover=function(){
+                        var ul= document.getElementsByTagName("ul");
+                        for(var j=0;j<ul.length;j++){
+                            ul.item(j).style.display="none";
+                        }
+                        document.getElementsByClassName(this.getAttribute("content")).item(0).setAttribute("style","display:block");
+                    }
+                }
             }
         </script>
     </head>
     <body>
         <main>
+        <div class="container">
             <header>
                 <nav>
-                    <div>第一课</div>
-                    <div>第二课</div>
-                    <div>第三课</div>
+                    <div content="content1">第一课</div>
+                    <div content="content2">第二课</div>
+                    <div content="content3">第三课</div>
                 </nav>
             </header>
             <div class="content">
@@ -30,7 +75,7 @@
                     <li>网页换肤效果</li>
                     <li>展开/收缩播放列表效果</li>
                 </ul>
-                <ul>
+                <ul class="content2">
                     <li>改变网页背景颜色</li>
                     <li>函数传参</li>
                     <li>高重用性函数的编写</li>
@@ -45,7 +90,22 @@
                     <li>数组</li>
                     <li>字符串连接</li>
                 </ul>
+                <ul class="content3">
+                    <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+                    <li>JavaScript出现的位置、优缺点</li>
+                    <li>变量、类型、typeof、数据类型转换、变量作用域</li>
+                    <li>闭包：什么是闭包、简单应用、闭包缺点</li>
+                    <li>程序流程控制：判断、循环、跳出</li>
+                    <li>命名规范：命名规范及必要性、匈牙利命名法</li>
+                    <li>函数详解：函数构成、调用、事件、传参数、可变参、返回值</li>
+                    <li>定时器的使用：setInterval、setTimeout</li>
+                    <li>定时器应用：站长站导航效果</li>
+                    <li>定时器应用：自动播放的选项卡</li>
+                    <li>定时器应用：数码时钟</li>
+                    <li>程序调试方法</li>
+                </ul>
             </div>
+        </div>
         </main>
     </body>
 </html>
